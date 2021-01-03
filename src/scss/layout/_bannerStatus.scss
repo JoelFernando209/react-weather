@@ -1,0 +1,87 @@
+.bannerStatus {
+  position: relative;
+  
+  background-color: #1E213A;
+  
+  width: 30%;
+  height: 100vh;
+  padding: 3rem;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+  &__searchBox {
+    width: 100%;
+  }
+  
+  &__searchButton {
+    position: relative;
+    z-index: 1;
+  }
+  
+  &__cloudBg {
+    position: absolute;
+    
+    top: 5rem;
+    height: 25rem;
+    width: 100%;
+    opacity: .3;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  &__statusImg {
+    width: 15rem;
+    height: 15rem;
+  }
+  
+  &__temperature {
+    font-size: 10rem;
+    color: $color-gray;
+    line-height: 4rem;
+  }
+  
+  &__temperatureIcon {
+    font-size: 5rem;
+    margin-left: .4rem;
+    opacity: .5;
+  }
+  
+  &__temperatureName {
+    font-size: 2rem;
+    opacity: .5;
+    color: $color-gray;
+    font-weight: 500;
+  }
+  
+  &__ubicationInfo {
+    opacity: .5;
+    color: $color-gray;
+    text-align: center;
+  }
+  
+  &__date {
+    margin-bottom: 1.2rem;
+  }
+  
+  &__ubicationCity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &__ubicationIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: .4rem;
+    filter: invert(100%);
+  }
+  
+  &__ubicationName {
+    
+  }
+}

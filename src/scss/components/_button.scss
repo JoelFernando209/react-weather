@@ -1,0 +1,27 @@
+.btn {
+  padding: 1rem 1.3rem;
+  border-radius: .3rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: inherit;
+  
+  @include centerFlex();
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &--gray {
+    background-color: #6E707A;
+    color: $color-gray;
+    
+    &:hover {
+      background-color: darken(#6E707A, 5%);
+    }
+    
+    &:active {
+      background-color: darken(#6E707A, 10%);
+    }
+  }
+}
