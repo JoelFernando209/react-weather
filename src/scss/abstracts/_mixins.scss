@@ -3,3 +3,13 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin hoverAndActivePattern($color) {
+  &:hover {
+    background-color: darken($color, 5%);
+  }
+  
+  &:active {
+    background-color: darken($color, 10%);
+  }
+}

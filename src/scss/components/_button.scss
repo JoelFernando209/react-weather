@@ -24,4 +24,11 @@
       background-color: darken(#6E707A, 10%);
     }
   }
+  
+  &--blue {
+    background-color: #3C47E9;
+    color: $color-gray;
+    
+    @include hoverAndActivePattern(#3C47E9);
+  }
 }

@@ -1,0 +1,41 @@
+.percentageBar {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  background-color: $color-gray;
+  border-radius: 2rem;
+
+  &__progress {
+    background-color: #FFEC65;
+    height: 1rem;
+    border-radius: 2rem;
+  }
+
+  & > * {
+    top: -2rem;
+  }
+  
+  &__start {
+    position: absolute;
+    left: 0;
+  }
+  
+  &__middle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  &__end {
+    position: absolute;
+    right: 0;
+  }
+  
+  &::after {
+    content: '%';
+    font-weight: 200;
+    position: absolute;
+    right: 0;
+    bottom: -2rem;
+  }
+}

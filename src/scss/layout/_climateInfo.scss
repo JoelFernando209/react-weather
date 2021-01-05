@@ -1,0 +1,77 @@
+.climateInfo {
+  background-color: #100E1D;
+  width: 70%;
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  color: $color-gray;
+  padding: 3rem 6rem;
+  
+  overflow-y: scroll;
+  
+  &__temperatureOptions {
+    margin-left: auto;
+    
+    display: flex;
+  }
+  
+  &__temperatureOption {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    
+    @include centerFlex();
+    
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+    
+    &--celsius {
+      background-color: $color-gray;
+      color: #110E3C;
+      
+      @include hoverAndActivePattern($color-gray);
+    }
+    
+    &--faren {
+      background-color: #585676;
+      
+      @include hoverAndActivePattern(#585676);
+    }
+  }
+  
+  &__temperatureCards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  &__dataClimate {
+    
+  }
+  
+  &__dataClimateTitle {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  
+  &__dataClimateGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    grid-gap: 2rem;
+  }
+  
+  &__footer {
+    text-align: center;
+    opacity: .6;
+    margin-top: 7rem;
+    font-size: 1.3rem;
+  }
+}

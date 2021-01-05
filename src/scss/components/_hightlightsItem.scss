@@ -1,0 +1,28 @@
+.hightlightsItem {
+  background-color: $color-light-purple;
+  padding: 3rem 2rem;
+
+  @include centerFlex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  
+  &__title {
+    margin: .5rem 0;
+    font-size: 1.5rem;
+  }
+  
+  &__dataNumber {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+  
+  &__dataText {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  
+  &__addon {
+    width: 100%;
+    margin-top: 3.5rem;
+  }
+}

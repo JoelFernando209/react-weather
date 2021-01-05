@@ -1,5 +1,6 @@
 @import './abstracts/variables';
 @import './abstracts/mixins';
+@import './abstracts/utilities';
 
 @import './base/base';
 @import './base/typography';
@@ -7,5 +8,10 @@
 @import './pages/dashboard';
 
 @import './layout/bannerStatus';
+@import './layout/climateInfo';
+@import './layout/searchMenu';
 
 @import './components/button';
+@import './components/temperatureCard';
+@import './components/hightlightsItem';
+@import './components/percentageBar';
