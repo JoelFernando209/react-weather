@@ -1,7 +1,7 @@
 import './scss/main.scss';
 
-import { BannerStatus } from './BannerStatus/BannerStatus';
-import { ClimateInfo } from './ClimateInfo/ClimateInfo';
+import { BannerStatus } from './Components/BannerStatus/BannerStatus';
+import { ClimateInfo } from './Components/ClimateInfo/ClimateInfo';
 
 const App = () => {
   return (

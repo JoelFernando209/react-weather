@@ -1,1 +1,4 @@
 .mg-md-top { margin-top: 3rem; }
+
+.invisible { visibility: hidden; opacity: 0; width: 0 !important; }
+.visible { width: 100% !important; visibility: visible; opacity: 1; }

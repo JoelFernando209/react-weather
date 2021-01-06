@@ -4,6 +4,12 @@
   justify-content: center;
 }
 
+@mixin centerY {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 @mixin hoverAndActivePattern($color) {
   &:hover {
     background-color: darken($color, 5%);
@@ -13,3 +19,9 @@
     background-color: darken($color, 10%);
   }
 }
+
+/*
+  RESPONSIVE:
+  
+  
+*/

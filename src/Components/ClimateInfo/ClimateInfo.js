@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 import TemperatureCard from '../TemperatureCard/TemperatureCard';
 import HightlightsItem from '../HightlightsItem/HightlightsItem';
-import PercentageBar from '../PercentageBar/PercentageBar';
+
+import PercentageBar from '../Widgets/PercentageBar/PercentageBar';
 
 export const ClimateInfo = () => {
   const [ climateCards ] = useState([
@@ -45,24 +46,28 @@ export const ClimateInfo = () => {
   
   const [ climateTodayData ] = useState([
     {
+      id: '1',
       title: 'Wind status',
       dataNumber: '990',
       dataText: 'mb'
     },
     {
+      id: '2',
       title: 'Wind status',
       dataNumber: '990',
       dataText: 'mb',
       addon: (
-        <PercentageBar className='mg-md-top' widthPercentage='60' />
+        <PercentageBar widthPercentage='60' />
       )
     },
     {
+      id: '3',
       title: 'Wind status',
       dataNumber: '990',
       dataText: 'mb',
     },
     {
+      id: '4',
       title: 'Wind status',
       dataNumber: '990',
       dataText: 'mb',
@@ -101,11 +106,12 @@ export const ClimateInfo = () => {
       <div className='climateInfo__dataClimate'>
         <div className='title-3 climateInfo__dataClimateTitle'>Today's Hightlights</div>
         
-        <div class='climateInfo__dataClimateGrid'>
+        <div className='climateInfo__dataClimateGrid'>
           {
             climateTodayData.map(data => {
               return (
                 <HightlightsItem
+                  key={data.id}
                   title={data.title}
                   dataNumber={data.dataNumber}
                   dataText={data.dataText}
@@ -118,7 +124,7 @@ export const ClimateInfo = () => {
         </div>
       </div>
       
-      <div class='climateInfo__footer'>Joel Dominguez @ DevChallenges.io | Powered by React</div>
+      <div className='climateInfo__footer'>Joel Dominguez @ DevChallenges.io | Powered by React</div>
     </div>
   )
 };
