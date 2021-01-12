@@ -23,5 +23,27 @@
 /*
   RESPONSIVE:
   
-  
+  sm-phone: 22.5em            // 360px
+  phone: 35.62                // 570px
+  tablet: 53.12em             // 850px
+  desktop: 68.75em            // 1100px
+  big-desktop: 81.25em        // 1300px
 */
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == sm-phone {
+    @media only screen and (max-width: 22.5em) { @content };
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 35.62em) { @content };
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 53.12em) { @content };
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 68.75em) { @content };
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 81.25em) { @content };
+  }
+}

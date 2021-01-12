@@ -1,5 +1,5 @@
 import React from 'react';
-import HeavyCloud from '../../assets/HeavyCloud.png';
+import HeavyCloud from '../../../assets/HeavyCloud.png';
 
 const TemperatureCard = ({ day, imgSrc, maxTemp, minTemp }) => {
   

@@ -1,0 +1,24 @@
+.ubicationInfo {
+  opacity: .5;
+  color: $color-gray;
+  text-align: center;
+  
+  &__date {
+    margin-bottom: 1.2rem;
+  }
+  
+  &__ubicationCity {
+    @include centerFlex();
+  }
+  
+  &__ubicationIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: .4rem;
+    filter: invert(100%);
+  }
+  
+  &__ubicationName {
+    
+  }
+}

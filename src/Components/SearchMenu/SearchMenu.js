@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import SearchIcon from '../../assets/search-icon.svg';
 import CloseIcon from '../../assets/close-icon.svg';
 
-const SearchMenu = ({ searchMenuState, setSearchMenu }) => {
+import ResultItems from '../ResultItems/ResultItems';
+import SearchInputData from '../SearchInputData/SearchInputData';
+
+const SearchMenu = ({
+    searchMenuState,
+    setSearchMenu,
+    searchValue,
+    setResultSearch
+  }) => {
+  
+  useEffect(() => {
+    if(searchValue.trim().length > 0) {
+      fetch(`https://www.metaweather.com/api/location/search/?query=${searchValue}`)
+      .then(res => res.json())
+      .then(data => setResultSearch(data))
+      .catch(err => console.log(err));
+    }
+    
+    
+  }, [searchValue, setResultSearch]);
+  
   const classesSearchMenu = [];
   
   classesSearchMenu.push('searchMenu');
@@ -18,23 +37,11 @@ const SearchMenu = ({ searchMenuState, setSearchMenu }) => {
     <div className={classesSearchMenu.join(' ')}>
       <img onClick={setSearchMenu} src={CloseIcon} alt='Exit Search Menu' className='searchMenu__exit' />
     
-      <div className='searchMenu__setData'>
-        <div className='searchMenu__inputBox'>
-          <img src={SearchIcon} alt='Search Icon' className='searchMenu__inputIcon' />
-        
-          <input type='text' className='searchMenu__searchInput' placeholder='search location' />
-        </div>
+      <SearchInputData />
       
-        <button className='searchMenu__searchBtn btn btn--blue'>Search</button>
-      </div>
-      
-      <div className='searchMenu__resultSearch'>
-        <div className='searchMenu__resultItem'>
-          London
-        </div>
-      </div>
+      <ResultItems />
     </div>
   )
 };
 
-export default SearchMenu;
+export default React.memo(SearchMenu);

@@ -1,0 +1,33 @@
+.temperatureOptions {
+  margin-left: auto;
+    
+  display: flex;
+}
+
+.temperatureOption {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  
+  @include centerFlex();
+  
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+  
+  &--celsius {
+    background-color: $color-gray;
+    color: #110E3C;
+    
+    @include hoverAndActivePattern($color-gray);
+  }
+  
+  &--faren {
+    background-color: #585676;
+    
+    @include hoverAndActivePattern(#585676);
+  }
+}
