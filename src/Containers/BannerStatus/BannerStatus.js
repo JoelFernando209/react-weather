@@ -8,33 +8,50 @@ import StatusImg from '../../Components/StatusImg/StatusImg';
 
 import WoeidContext from '../../context/woeid-context';
 
-export const BannerStatus = ({ dataClimate, setDataClimate, currentWoeid, changeWoeid }) => {
+export const BannerStatus = ({ dataClimate, setDataClimate, currentWoeid, changeWoeid, tempMeasure, setLoadingStatus }) => {
   const [ searchMenuState, setSearchMenuState ] = useState(false);
   const [ searchValue, setSearchValue ] = useState('london');
   const [ resultSearch, setResultSearch ] = useState([]);
   
+  const searchButtonHandler = () => {
+    setSearchMenuState(!searchMenuState);
+  };
+  
   useEffect(() => {
+    setLoadingStatus(true);
+
+    if(searchMenuState) {
+      searchButtonHandler();
+    }
+    
     if(currentWoeid !== 0) {
       fetch(`https://www.metaweather.com/api/location/${currentWoeid}/`)
       .then(res => res.json())
       .then(data => setDataClimate(data))
+      .then(() => {
+        setTimeout(() => {
+          setLoadingStatus(false)
+          
+        }, 600)
+      })
     }
     
-  }, [currentWoeid, setDataClimate]);
+  }, [currentWoeid]);
   
   useEffect(() => {
     fetch('https://www.metaweather.com/api/location/44418/')
     .then(res => res.json())
     .then(data => setDataClimate(data))
+    .then(() => {
+      setTimeout(() => {
+        setLoadingStatus(false)
+      }, 600)
+    })
     
-  }, [setDataClimate]);
+  }, [setDataClimate, setLoadingStatus]);
   
   const changeSearchValue = input => {
     setSearchValue(input);
-  };
-  
-  const searchButtonHandler = () => {
-    setSearchMenuState(!searchMenuState);
   };
   
   return (
@@ -64,11 +81,15 @@ export const BannerStatus = ({ dataClimate, setDataClimate, currentWoeid, change
       <div className='bannerStatus__temperature'>
         {
           dataClimate.consolidated_weather ?
-            dataClimate.consolidated_weather[0].the_temp.toFixed(0)
+            tempMeasure === 'F°' ?
+              ((dataClimate.consolidated_weather[0].the_temp.toFixed(0)*1.8)+32).toFixed(0)
+            :
+              dataClimate.consolidated_weather[0].the_temp.toFixed(0)
+            
           :
             '0'
         }
-        <span className='bannerStatus__temperatureIcon'>C°</span>
+        <span className='bannerStatus__temperatureIcon'>{tempMeasure}</span>
       </div>
       
       <div className='bannerStatus__temperatureName'>

@@ -1,27 +1,23 @@
 import React from 'react';
-import HeavyCloud from '../../../assets/HeavyCloud.png';
 
-const TemperatureCard = ({ day, imgSrc, maxTemp, minTemp }) => {
-  
-  return (
-    <div className='temperatureCard'>
+const TemperatureCard = ({ day, imgSrc, maxTemp, minTemp, currentMeasure }) => (
+  <div className='temperatureCard'>
+    
+    <div className='temperatureCard__day'>{day}</div>
+    
+    <img src={imgSrc} alt='Temperature Icon' className='temperatureCard__imgClimate' />
+    
+    <div className='temperatureCard__temp'>
+      <span className='temperatureCard__maxTemp'>
+        {currentMeasure === 'F°' ? ((maxTemp*1.8)+32).toFixed(1) : maxTemp } {currentMeasure}
+      </span>
       
-      <div className='temperatureCard__day'>{day}</div>
-      
-      <img src={HeavyCloud} alt='Temperature Icon' className='temperatureCard__imgClimate' />
-      
-      <div className='temperatureCard__temp'>
-        <span className='temperatureCard__maxTemp'>
-          {maxTemp}
-        </span>
-        
-        <span className='temperatureCard__minTemp'>
-          {minTemp}
-        </span>
-      </div>
-      
+      <span className='temperatureCard__minTemp'>
+        {currentMeasure === 'F°' ? ((minTemp*1.8)+32).toFixed(1) : minTemp } {currentMeasure}
+      </span>
     </div>
-  )
-};
+    
+  </div>
+);
 
 export default TemperatureCard;

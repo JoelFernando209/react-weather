@@ -18,14 +18,7 @@
     margin-right: 1rem;
   }
   
-  &--celsius {
-    background-color: $color-gray;
-    color: #110E3C;
-    
-    @include hoverAndActivePattern($color-gray);
-  }
-  
-  &--faren {
+  &--celsius, &--faren {
     background-color: #585676;
     
     @include hoverAndActivePattern(#585676);

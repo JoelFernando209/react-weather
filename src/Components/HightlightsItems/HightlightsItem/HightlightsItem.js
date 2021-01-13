@@ -6,7 +6,7 @@ const HightlightsItem = ({ title, dataNumber, dataText, children = null }) => {
     <div className='hightlightsItem'>
       <div className='hightlightsItem__title'>{title}</div>
       
-      <div className='hightlightsItem__dataNumber'>{dataNumber}<span className='hightlightsItem__dataText'>{dataText}</span></div>
+      <div className='hightlightsItem__dataNumber'>{dataNumber}<span className='hightlightsItem__dataText'> {dataText}</span></div>
       
       {
         children !== null ?

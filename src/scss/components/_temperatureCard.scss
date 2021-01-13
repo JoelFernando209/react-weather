@@ -19,8 +19,14 @@
   
   &__temp {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 60%;
+  }
+  
+  &__maxTemp, &__minTemp {
+    font-size: 1.2rem;
+    margin: .1rem .3rem;
   }
   
   &__maxTemp {
