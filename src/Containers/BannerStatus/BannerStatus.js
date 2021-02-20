@@ -25,7 +25,7 @@ export const BannerStatus = ({ dataClimate, setDataClimate, currentWoeid, change
     }
     
     if(currentWoeid !== 0) {
-      fetch(`https://www.metaweather.com/api/location/${currentWoeid}/`)
+      fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${currentWoeid}/`)
       .then(res => res.json())
       .then(data => setDataClimate(data))
       .then(() => {
@@ -39,7 +39,7 @@ export const BannerStatus = ({ dataClimate, setDataClimate, currentWoeid, change
   }, [currentWoeid]);
   
   useEffect(() => {
-    fetch('https://www.metaweather.com/api/location/44418/')
+    fetch('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/44418/')
     .then(res => res.json())
     .then(data => setDataClimate(data))
     .then(() => {

@@ -14,7 +14,7 @@ const SearchMenu = ({
   
   useEffect(() => {
     if(searchValue.trim().length > 0) {
-      fetch(`https://www.metaweather.com/api/location/search/?query=${searchValue}`)
+      fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${searchValue}`)
       .then(res => res.json())
       .then(data => setResultSearch(data))
       .catch(err => console.log(err));
